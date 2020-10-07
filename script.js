@@ -1,9 +1,32 @@
-<html>
+var contatos = [ 
+document.querySelector("#campo-nome"),
+document.querySelector("#campo-endereco"),
+document.querySelector("#campo-bairro"),
+document.querySelector("#campo-telefoneFixo"),
+document.querySelector("#campo-celular"),
+];
+console.log(contatos);
 
-<head>
+document.querySelector('#formulario').addEventListener("submit", function(event){
 
-	<title> CRUD JS </title>
+event.preventDefault();
 
-</head>
+var tr = document.createElement('tr');
 
-</html>
+contatos.forEach(function(posicao) {
+	td = document.createElement('td');
+	td.textContent = posicao.value;
+	tr.appendChild(td);
+});
+
+var tabela = document.querySelector("table tbody");
+
+tabela.appendChild(tr);
+
+for(var i=0;i <=contatos.length;i++){
+	this[i].value ='';
+}
+
+contatos[0].focus();
+	
+});
